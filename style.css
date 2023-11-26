@@ -1,0 +1,515 @@
+body
+{
+    background-color: rgb(201, 207, 248) !important;
+    overflow-y: hidden;
+}
+.outer-container2
+{
+    margin: 50px;
+    border: 4px solid green;
+    height: calc(100vh - 105px);
+    border-radius: 20px;
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.outer-container2::-webkit-scrollbar {
+    display: none;
+}
+.outer-container
+{
+    margin: 50px;
+    border: 4px solid green;
+    height: calc(100vh - 105px);
+    border-radius: 20px;
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation-name: container;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+}
+.outer-container::-webkit-scrollbar {
+    display: none;
+}
+@keyframes container
+{
+    0%{
+        margin: 50vh 50vw;
+        height: 0px;
+    }
+    10%{
+        margin: 40vh 45vw;
+        height: 100px;
+    }
+    40%{
+        margin: 40vh 45vw;
+        height: 100px;
+    }
+    50%{
+        margin: 35vh 35vw;
+        height: 200px;
+    }
+    85%{
+        margin: 35vh 35vw;
+        height: 200px;
+    }
+}
+.welcome-text
+{
+    height: 0%;
+    animation: wt1 3s 1;
+    animation-delay: 1s;
+    display: none;
+    opacity: 0;
+    color: brown;
+}
+@keyframes wt1
+{
+    0%{
+        height: 100%;
+    }
+    40%{
+        display: inline;
+        opacity: 1;
+    }
+    60%{
+        display: inline;
+        opacity: 1;
+    }
+    80%{
+        display: inline;
+        opacity: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+.welcome-text2
+{
+    height: 0%;
+    animation: wt2 3.5s 1;
+    animation-delay: 4s;
+    display: none;
+    opacity: 0;
+    color: red;
+}
+@keyframes wt2
+{
+    0%{
+        height: 100%;
+    }
+    40%{
+        display: inline;
+        opacity: 1;
+    }
+    60%{
+        display: inline;
+        opacity: 1;
+    }
+    80%{
+        display: inline;
+        opacity: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+.inner-container
+{
+    animation: innerpart 3s 1;
+    animation-delay: 7s;
+}
+@keyframes innerpart
+{
+    0%{
+        display: none;
+        opacity: 0;
+    }
+    40%{
+        display: block;
+        opacity: 0;
+    }
+    80%{
+        display: block;
+        opacity: 1;
+    }
+}
+.ownpic
+{
+    width: 73%;
+    margin-top: 100px;
+    animation-name: mypic;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+@keyframes mypic
+{
+    50%{
+        scale: 1.1;
+    }
+    100%{
+
+    }
+}
+.sidetext
+{
+    margin-top: 20vh !important;
+}
+.heading1
+{
+    font-size: 70px;
+    color: red;
+}
+.sidetext .btn
+{
+    margin: 30px 20px 0 0 !important;
+}
+
+/* ============================= My Skills ========================== */
+
+.design1
+{
+    margin: 0 10vw;
+}
+.heading2
+{
+    font-weight: bolder;
+    color: green;
+}
+.skils-cont
+{
+    padding: 0px 1.2rem;
+}
+.skils
+{
+    background-image: linear-gradient(135deg,red,rgb(142, 16, 16));
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.skils h3
+{
+    margin: 15px 0;
+}
+.color2
+{
+    background-image: linear-gradient(135deg,blue,rgb(12, 19, 109));
+}
+.color3
+{
+    background-image: linear-gradient(135deg,rgb(199, 2, 199),rgb(101, 14, 109));
+}
+.progresss-cont
+{
+    display: flex;
+}
+.data1
+{
+    margin-left: 20px;
+}
+.data2
+{
+    width: 100%;
+}
+.data2 .progress
+{
+    margin: 8px 20px 17px !important;
+    height: 20px;
+}
+
+/* ============================= My Portfolio ========================== */
+
+.design2
+{
+    margin: 0 10vw;
+}
+.project1
+{
+    background-image: url(./images/Blood\ Donation\ System.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2px 2px 15px black;
+    height: 425px;
+    margin-bottom: 25px;
+    border-radius: 20px 0 0 20px;
+    transition: all 0.3s;
+}
+.project2
+{
+    background-image: url(./images/Calculator.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2px 2px 15px black;
+    height: 200px;
+    margin-bottom: 25px;
+    border-radius: 0 20px 0 0;
+    transition: all 0.3s;
+}
+.project3
+{
+    background-image: url(./images/program\ panel.png);
+    background-size: cover;
+    background-position-x: center;
+    box-shadow: 2px 2px 15px black;
+    height: 200px;
+    margin-bottom: 25px;
+    border-radius: 0 0 20px 0;
+    transition: all 0.3s;
+}
+.project1:hover, .project2:hover, .project3:hover
+{
+    transform: scale(1.05);
+}
+
+/* ============================= Qualification ========================== */
+
+.underline
+{
+    height: 5px;
+    background-color: red;
+    margin: 3px 0 12px;
+    border-radius: 2.5px;
+}
+.quali
+{
+    margin-bottom: 30px;
+}
+
+/* ============================= Contact Me ========================== */
+
+.social-icon
+{
+    /* display: inline-block; */
+    text-align: center;
+}
+.social-icon img
+{
+    width: 66px;
+    margin: 0 15px 25px;
+    transition: all 0.2s;
+}
+.social-icon img:hover
+{
+    transform: scale(1.1);
+}
+
+/* ============================= My Blogs ========================== */
+
+.heading
+{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px 30px;
+    background-image: linear-gradient(rgb(159, 226, 250),white);
+}
+.heading h1
+{
+    font-size: 100px;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+.heading h2
+{
+    font-size: 60px;
+    font-family: cursive;
+    margin: 40px 0px 0px -24px;
+    color: rgb(183, 84, 84);
+}
+.blogs
+{
+    background-size: cover;
+    height: 500px;
+    margin: 40px;
+    border-radius: 20px;
+}
+.blog1
+{
+    background-image: url(./images/blog1.jpeg);
+}
+.blog2
+{
+    background-image: url(./images/blog2.png);
+    background-position: center;
+}
+.blog3
+{
+    background-image: url(./images/blog3.png);
+}
+.blog4
+{
+    background-image: url(./images/blog4.jpeg);
+}
+.blog5
+{
+    background-image: url(./images/blog5.jpg);
+}
+.blogs h1
+{
+    font-size: 90px;
+    margin-left: 100px;
+    color: white;
+    text-shadow: 2px 2px 10px black;
+}
+.blogs p
+{
+    color: yellow;
+    text-shadow: 5px 5px 10px black;
+    margin-left: 100px;
+}
+.sub2
+{
+    background-image: linear-gradient(white,rgb(205, 242, 255),white);   
+    height: 200px;
+}
+.blog-gallery
+{
+    padding: 0 40px;
+}
+.blog-gallery img, .blog-gallery video
+{
+    width: 100%;
+    border-radius: 20px;
+}
+.blog-gallery p
+{
+    text-align: justify;
+    margin-top: 20px;
+    width: 97%;
+}
+.blog-gallery .btn-loc
+{
+    width: 150px;
+    margin-top: -15%;
+}
+.vvvv
+{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+a
+{
+    text-decoration: none !important;
+}
+.img-wrld
+{
+    /* background-color: rgb(0, 0, 0); */
+    background-image: linear-gradient(to bottom, white, white, black);
+    border-radius: 20px;
+    padding-bottom: 6px;
+    margin-bottom: 22px;
+    transition: all 0.3s;
+}
+.img-wrld:hover
+{
+    padding: 10px;
+}
+.img-wrld h4
+{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .outer-container, .outer-container2 {
+      margin: 20px;
+      height: calc(100vh - 50px);
+    }
+    @keyframes container
+    {
+        0%{
+            margin: 50vh 50vw;
+            height: 0px;
+        }
+        10%{
+            margin: 45vh 37vw;
+            height: 100px;
+        }
+        40%{
+            margin: 45vh 37vw;
+            height: 100px;
+        }
+        50%{
+            margin: 38vh 20vw;
+            height: 200px;
+        }
+        85%{
+            margin: 38vh 20vw;
+            height: 200px;
+        }
+    }
+    .sidetext
+    {
+        margin-top: 50px !important;
+        margin-left: 20px;
+    }
+    .design1
+    {
+        margin: 0 0;
+    }
+    .design2
+    {
+        margin: 0 20px;
+    }
+    .project1
+    {
+        height: 225px;
+        border-radius: 20px 0 20px 0;
+    }
+    .project2, .project3
+    {
+        border-radius: 20px 0 20px 0;
+    }
+    .data2 .progress
+    {
+        margin: 8px 20px 13px !important;
+    }
+    .blogs
+    {
+        height: 180px;
+        margin: 20px;
+        background-position: center;
+    }
+    .blogs h1
+    {
+        font-size: 40px;
+        margin-left: 20px;
+    }
+    .blogs p
+    {
+        margin-left: 20px;
+        font-size: 9px;
+        
+    }
+    .heading h1
+    {
+        font-size: 65px;
+    }
+    .heading h2
+    {
+        font-size: 35px;
+        margin: 30px 0px 0px -16px;
+    }
+    .blog-gallery
+    {
+        padding: 0 20px;
+    }
+    .blog-gallery p
+    {
+        width: 100%;
+        font-size: 13px;
+    }
+    .blog-gallery img, .blog-gallery video
+    {
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .blog-gallery .btn-loc
+    {
+        width: 40%;
+        margin: 25px 0 30px 30%;
+    }
+  }
