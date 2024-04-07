@@ -218,6 +218,10 @@ body
     margin: 8px 20px 17px !important;
     height: 20px;
 }
+.centered{
+    display: flex;
+    justify-content: center;
+}
 
 /* ============================= My Portfolio ========================== */
 
