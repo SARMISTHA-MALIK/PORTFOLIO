@@ -345,6 +345,10 @@ body
 {
     background-image: url(./images/blog5.jpg);
 }
+.blog6
+{
+    background-image: url(./images/blog6.jpg);
+}
 .blogs h1
 {
     font-size: 90px;
@@ -411,7 +415,9 @@ a
     text-align: center;
     margin: 10px 0;
 }
-
+.side-image1{
+    margin-top: 9%;
+}
 @media screen and (max-width: 768px) {
     .outer-container, .outer-container2 {
       margin: 20px;
