@@ -330,28 +330,28 @@ body
 }
 .blog1
 {
-    background-image: url(./images/blog1.jpeg);
+    background-image: url(./images/blog1.webp);
 }
 .blog2
 {
-    background-image: url(./images/blog2.png);
+    background-image: url(./images/blog2.webp);
     background-position: center;
 }
 .blog3
 {
-    background-image: url(./images/blog3.png);
+    background-image: url(./images/blog3.webp);
 }
 .blog4
 {
-    background-image: url(./images/blog4.jpeg);
+    background-image: url(./images/blog4.webp);
 }
 .blog5
 {
-    background-image: url(./images/blog5.jpg);
+    background-image: url(./images/blog5.webp);
 }
 .blog6
 {
-    background-image: url(./images/blog6.jpg);
+    background-image: url(./images/blog6.webp);
 }
 .blogs h1
 {
