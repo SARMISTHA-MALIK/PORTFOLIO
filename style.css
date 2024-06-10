@@ -222,6 +222,13 @@ body
     display: flex;
     justify-content: center;
 }
+.centered a{
+    border: 2px solid orchid;
+}
+.centered a:hover{
+    background-color: orchid;
+    color: white;
+}
 
 /* ============================= My Portfolio ========================== */
 
@@ -514,6 +521,7 @@ a
     .blog-gallery img, .blog-gallery video
     {
         width: 100%;
+        height: max-content;
         border-radius: 10px;
         text-align: center;
     }
