@@ -224,10 +224,14 @@ body
 }
 .centered a{
     border: 2px solid orchid;
+    color: orchid;
 }
 .centered a:hover{
     background-color: orchid;
     color: white;
+}
+i{
+    margin-right: 10px;
 }
 
 /* ============================= My Portfolio ========================== */
@@ -397,6 +401,10 @@ body
 {
     width: 150px;
     margin-top: -15%;
+}
+.blog-gallery .btn-loc i
+{
+    margin-right: 10px;
 }
 .vvvv
 {
