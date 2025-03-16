@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Card Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-card {
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            min-height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(25deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+            border-radius: 15px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+
+            p {
+                font-size: 10px;
+                margin-bottom: 10px;
+            }
+
+            h5 {
+                margin: 15px 0 4px;
+            }
+        }
+
+        .price-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 10px;
+            padding: 2px 10px 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-content{
+            text-align: center;
+            p{
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            .chip{
+                background-color: rgb(253, 202, 255);
+                margin: 0 5px;
+                font-size: 12px;
+                padding: 3px 10px 5px;
+                border-radius: 20px;
+            }
+            #modalDesc{
+                margin: auto 100px;
+            }
+        }
+
+        .modal-title{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .modal-body{
+            padding: 20px 40px !important;
+        }
+
+        .side-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin: 5px;
+            border-radius: 8px;
+        }
+        @media screen and (max-width: 768px) {
+            #modalDesc{
+                margin: 40px 20px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row g-3" id="cardContainer">
+            <!-- Cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <div></div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <p id="modalSubject" class="mt-1"></p>
+                    <div class="d-flex justify-content-center">
+                        <div class="chip">location</div>
+                        <div class="chip">date 2025</div>
+                    </div><br>
+                    <img id="modalFImage" class="modal-img" src="" alt="Main Image">
+                    <p id="modalDesc" class="mt-4"></p>
+                    <div id="modalSideImages" class="d-flex flex-wrap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cardsData = [
+            { name: "SAVANDURGA", bgImage: "blog6.webp", subject: "Asia's Largest Monolith Mountain", desc: "Savandurga is a 4,024 ft (1,226m) tall granite hill in Karnataka, India, and the largest monolith hill in Asia. It's located 60 km west of Bengaluru, off the Magadi road, and is part of the Deccan plateau. The hill is made up of spectacular landscapes, and two high peaks that join together.", FImage: "blog6.webp", SImage: ["savan1.jpg", "savan2.jpg"], width: "col-md-4" },
+            { name: "CLOTHES", bgImage: "clothes.jpg", subject: "Style Is A Way To Say Who You Are", desc: "Trendy and comfortable clothing collection.", FImage: "clothes-main.jpg", SImage: ["cloth1.jpg", "cloth2.jpg"], width: "col-md-4" },
+            { name: "EID", bgImage: "eid.jpg", subject: "A Celebrating Moment For Muslims", desc: "Eid is a festival of joy and togetherness.", FImage: "eid-main.jpg", SImage: ["eid1.jpg", "eid2.jpg"], width: "col-md-4" },
+            { name: "NATURE", bgImage: "nature.jpg", subject: "A Walk In Nature Walks The Soul Back Home", desc: "Experience the beauty of untouched nature.", FImage: "nature-main.jpg", SImage: ["nature1.jpg", "nature2.jpg"], width: "col-md-6" },
+            { name: "LAND", bgImage: "land.jpg", subject: "By Land, They're Not Making It Anymore", desc: "Land is a valuable and limited resource.", FImage: "land-main.jpg", SImage: ["land1.jpg", "land2.jpg"], width: "col-md-3" },
+            { name: "TRAVEL", bgImage: "travel.jpg", subject: "Travel Often And Live Life With Open Eyes", desc: "Explore new places and create memories.", FImage: "travel-main.jpg", SImage: ["travel1.jpg", "travel2.jpg"], width: "col-md-3" }
+        ];
+
+        const container = document.getElementById("cardContainer");
+
+        cardsData.forEach((card, index) => {
+            const cardElement = document.createElement("div");
+            cardElement.className = card.width;
+            cardElement.innerHTML = `
+                <div class="custom-card p-3" style="background-image: url(./images/${card.bgImage});">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <br/><br/>
+                        <h5>${card.name}</h5>
+                        <p>${card.subject}</p>
+                        <button class="price-btn" data-index="${index}" data-bs-toggle="modal" data-bs-target="#cardModal">Explore</button>
+                    </div>
+                </div>
+            `;
+            container.appendChild(cardElement);
+        });
+
+        // Handle Modal Display
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("price-btn")) {
+                const index = event.target.getAttribute("data-index");
+                const card = cardsData[index];
+
+                document.getElementById("modalTitle").innerText = card.name;
+                document.getElementById("modalFImage").src = `./images/${card.FImage}`;
+                document.getElementById("modalSubject").innerText = card.subject;
+                document.getElementById("modalDesc").innerText = card.desc;
+
+                // Clear previous side images
+                const sideImagesContainer = document.getElementById("modalSideImages");
+                sideImagesContainer.innerHTML = "";
+                card.SImage.forEach(img => {
+                    const imgElement = document.createElement("img");
+                    imgElement.src = `./images/${img}`;
+                    imgElement.className = "side-img";
+                    sideImagesContainer.appendChild(imgElement);
+                });
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
