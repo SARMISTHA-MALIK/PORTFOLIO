@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap Card Layout</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .custom-card {
             border-radius: 15px;
@@ -52,25 +55,30 @@
             cursor: pointer;
         }
 
-        .modal-content{
+        .modal-content {
             text-align: center;
-            p{
+
+            p {
                 font-size: 12px;
                 margin-bottom: 10px;
             }
-            .chip{
-                background-color: rgb(253, 202, 255);
+
+            #chip {
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
                 margin: 0 5px;
-                font-size: 12px;
-                padding: 3px 10px 5px;
+                font-size: 10px;
+                font-weight: bold;
+                padding: 2px 15px 3px;
                 border-radius: 20px;
             }
-            #modalDesc{
+
+            #modalDesc {
                 margin: auto 100px;
             }
         }
 
-        .modal-title{
+        .modal-title {
             font-size: 30px;
             font-weight: bold;
         }
@@ -82,19 +90,44 @@
             border-radius: 10px;
         }
 
-        .modal-body{
+        .modal-body {
             padding: 20px 40px !important;
         }
 
+        #modalSideImages {
+            display: flex;
+            justify-content: center;
+        }
+
+        #modalLoc {
+
+            margin: 30px auto 20px;
+
+            a {
+                background-color: royalblue;
+                color: white;
+                text-decoration: none;
+                padding: 2px 20px 6px;
+                border-radius: 10px;
+            }
+
+            i {
+                font-size: 13px;
+                margin-right: 3px;
+                margin-top: -6px;
+            }
+        }
+
         .side-img {
-            width: 80px;
-            height: 80px;
+            width: auto;
+            height: 120px;
             object-fit: cover;
             margin: 5px;
             border-radius: 8px;
         }
+
         @media screen and (max-width: 768px) {
-            #modalDesc{
+            #modalDesc {
                 margin: 40px 20px !important;
             }
         }
@@ -120,12 +153,17 @@
                     <h5 class="modal-title" id="modalTitle"></h5>
                     <p id="modalSubject" class="mt-1"></p>
                     <div class="d-flex justify-content-center">
-                        <div class="chip">location</div>
-                        <div class="chip">date 2025</div>
+                        <div id="chip">3rd Mar 2025</div>
                     </div><br>
                     <img id="modalFImage" class="modal-img" src="" alt="Main Image">
-                    <p id="modalDesc" class="mt-4"></p>
+                    <p id="modalDesc" class="mt-4 mb-4"></p>
                     <div id="modalSideImages" class="d-flex flex-wrap"></div>
+                    <div id="modalLoc">
+                        <a href="">
+                            <i class="fa-solid fa-location-dot"></i>
+                            location
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,12 +171,12 @@
 
     <script>
         const cardsData = [
-            { name: "SAVANDURGA", bgImage: "blog6.webp", subject: "Asia's Largest Monolith Mountain", desc: "Savandurga is a 4,024 ft (1,226m) tall granite hill in Karnataka, India, and the largest monolith hill in Asia. It's located 60 km west of Bengaluru, off the Magadi road, and is part of the Deccan plateau. The hill is made up of spectacular landscapes, and two high peaks that join together.", FImage: "blog6.webp", SImage: ["savan1.jpg", "savan2.jpg"], width: "col-md-4" },
-            { name: "CLOTHES", bgImage: "clothes.jpg", subject: "Style Is A Way To Say Who You Are", desc: "Trendy and comfortable clothing collection.", FImage: "clothes-main.jpg", SImage: ["cloth1.jpg", "cloth2.jpg"], width: "col-md-4" },
-            { name: "EID", bgImage: "eid.jpg", subject: "A Celebrating Moment For Muslims", desc: "Eid is a festival of joy and togetherness.", FImage: "eid-main.jpg", SImage: ["eid1.jpg", "eid2.jpg"], width: "col-md-4" },
-            { name: "NATURE", bgImage: "nature.jpg", subject: "A Walk In Nature Walks The Soul Back Home", desc: "Experience the beauty of untouched nature.", FImage: "nature-main.jpg", SImage: ["nature1.jpg", "nature2.jpg"], width: "col-md-6" },
-            { name: "LAND", bgImage: "land.jpg", subject: "By Land, They're Not Making It Anymore", desc: "Land is a valuable and limited resource.", FImage: "land-main.jpg", SImage: ["land1.jpg", "land2.jpg"], width: "col-md-3" },
-            { name: "TRAVEL", bgImage: "travel.jpg", subject: "Travel Often And Live Life With Open Eyes", desc: "Explore new places and create memories.", FImage: "travel-main.jpg", SImage: ["travel1.jpg", "travel2.jpg"], width: "col-md-3" }
+            { name: "SAVANDURGA", bgImage: "blog6.webp", subject: "Asia's Largest Monolith Mountain", desc: "Savandurga is a 4,024 ft (1,226m) tall granite hill in Karnataka, India, and the largest monolith hill in Asia. It's located 60 km west of Bengaluru, off the Magadi road, and is part of the Deccan plateau. The hill is made up of spectacular landscapes, and two high peaks that join together.", date: "3rd Mar 2024", loc: "alkjsdfkljasdkjlfha", FImage: "blog6.webp", SImage: ["blog_galary_17.webp", "blog_galary_18.webp", "blog_galary_19.webp", "blog_galary_20.webp"], width: "col-md-4" },
+            { name: "ADIYOGI", bgImage: "blog1.webp", subject: "First yogi and the originator of yoga", desc: "Adiyogi is a 112-foot-tall bust of Lord Shiva located at the Isha Yoga Center in Chikkaballapur, Karnataka, India. It is the largest bust sculpture in the world. The statue was designed by Sadhguru Jaggi Vasudev, the founder of Isha Foundation.", date: "3rd Mar 2024", loc: "alkjsdfkljasdkjlfha", FImage: "blog1.webp", SImage: ["blog_galary_12.webp", "blog_galary_13.webp", "blog_galary_14.webp"], width: "col-md-4" },
+            { name: "COORG", bgImage: "blog5.webp", subject: "Hill station famous for its tea and coffee", desc: "Savandurga is a 4,024 ft (1,226m) tall granite hill in Karnataka, India, and the largest monolith hill in Asia. It's located 60 km west of Bengaluru, off the Magadi road, and is part of the Deccan plateau. The hill is made up of spectacular landscapes, and two high peaks that join together.", date: "3rd Mar 2024", loc: "alkjsdfkljasdkjlfha", FImage: "blog5.webp", SImage: ["blog_galary_1.webp", "blog_galary_16.webp"], width: "col-md-4" },
+            { name: "SAVANDURGA", bgImage: "blog6.webp", subject: "Asia's Largest Monolith Mountain", desc: "Savandurga is a 4,024 ft (1,226m) tall granite hill in Karnataka, India, and the largest monolith hill in Asia. It's located 60 km west of Bengaluru, off the Magadi road, and is part of the Deccan plateau. The hill is made up of spectacular landscapes, and two high peaks that join together.", date: "3rd Mar 2024", loc: "alkjsdfkljasdkjlfha", FImage: "blog6.webp", SImage: ["blog_galary_17.webp", "blog_galary_18.webp", "blog_galary_19.webp", "blog_galary_20.webp"], width: "col-md-4" },
+            { name: "SAVANDURGA", bgImage: "blog6.webp", subject: "Asia's Largest Monolith Mountain", desc: "Savandurga is a 4,024 ft (1,226m) tall granite hill in Karnataka, India, and the largest monolith hill in Asia. It's located 60 km west of Bengaluru, off the Magadi road, and is part of the Deccan plateau. The hill is made up of spectacular landscapes, and two high peaks that join together.", date: "3rd Mar 2024", loc: "alkjsdfkljasdkjlfha", FImage: "blog6.webp", SImage: ["blog_galary_17.webp", "blog_galary_18.webp", "blog_galary_19.webp", "blog_galary_20.webp"], width: "col-md-4" },
+            { name: "SAVANDURGA", bgImage: "blog6.webp", subject: "Asia's Largest Monolith Mountain", desc: "Savandurga is a 4,024 ft (1,226m) tall granite hill in Karnataka, India, and the largest monolith hill in Asia. It's located 60 km west of Bengaluru, off the Magadi road, and is part of the Deccan plateau. The hill is made up of spectacular landscapes, and two high peaks that join together.", date: "3rd Mar 2024", loc: "alkjsdfkljasdkjlfha", FImage: "blog6.webp", SImage: ["blog_galary_17.webp", "blog_galary_18.webp", "blog_galary_19.webp", "blog_galary_20.webp"], width: "col-md-4" },
         ];
 
         const container = document.getElementById("cardContainer");
@@ -170,6 +208,8 @@
                 document.getElementById("modalFImage").src = `./images/${card.FImage}`;
                 document.getElementById("modalSubject").innerText = card.subject;
                 document.getElementById("modalDesc").innerText = card.desc;
+                document.getElementById("chip").innerText = card.date;
+                document.querySelector("#modalLoc a").href = card.loc;
 
                 // Clear previous side images
                 const sideImagesContainer = document.getElementById("modalSideImages");
